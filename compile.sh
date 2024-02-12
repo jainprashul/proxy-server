@@ -11,35 +11,47 @@ pull_and_compile() {
   cd "$REPO_PATH"
   git pull
 
-  echo "Compiling the orch UI code..."
+  echo "Check the diff for orch UI code..."
   cd orch/orch-ui
 
+  # Check if any file in folder A has been modified, deleted, or created
+  if git diff --quiet HEAD^ -- "orch/orch-ui" >/dev/null 2>&1; then
+    echo "Folder A is unchanged."
+    # confirm if user wants to continue with the build
+    # wait for user input for 5 seconds and continue if no input is received 
+    read -t 5 -p "Do you want to continue with the build? (y/n) " || true
+    if [ "$REPLY" = "y" ]; then
+      compile
+    else
+      echo "Exiting the build process..."
+      exit 0
+    fi
+
+  else
+    echo "Folder A has files that have been modified, deleted, or created."
+    compile
+  fi
+}
+
+compile(){
+
   if [ -d "build" ]; then
-    echo "Deleting build..."
+    echo "Deleting old build..."
     rm -rf "build"
     echo "Folder build deleted."
   else
     echo "Folder build does not exist."
   fi
 
-  
-  # Check if any file in folder A has been modified, deleted, or created
-  if git diff --quiet HEAD^ -- "orch/orch-ui" >/dev/null 2>&1; then
-    echo "Folder A is unchanged."
-  else
-    echo "Folder A has files that have been modified, deleted, or created."
-
-    # Run the build process with 'make compile'  
-    # Additional actions after the build, if needed
-  fi
-  
+  echo "Running the build process..."
+ # Run the build process with 'make compile'  
   make compile
   echo "Compilation done..."
   current_date=$(date)
-
   echo "Complete at $current_date"
   echo "\n ************************************************** \n"
+  # Additional actions after the build, if needed
 }
 
-
+# Run the function
 pull_and_compile

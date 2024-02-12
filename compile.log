@@ -21174,3 +21174,737 @@ Done in 180.62s.
 Compilation done...
 Complete at Thu Jan 11 01:33:07 AM EST 2024
 \n ************************************************** \n
+Compiling at Fri Feb  9 06:30:00 AM EST 2024
+Pulling latest changes from Git...
+Already up to date.
+Compiling the orch UI code...
+Deleting build...
+Folder build deleted.
+Folder A is unchanged.
+yarn
+yarn install v1.22.19
+[1/4] Resolving packages...
+success Already up-to-date.
+Done in 2.08s.
+cd ../../common/ui/ui-lib && yarn build
+yarn run v1.22.19
+$ tsc --p ./tsconfig.lib.json && vite build
+vite v4.5.2 building for production...
+transforming...
+✓ 11286 modules transformed.
+Generated an empty chunk: "vite-env.d".
+Generated an empty chunk: "utilities/types".
+rendering chunks...
+warnings when minifying css:
+▲ [WARNING] A nested style rule cannot start with "input" because it looks like the start of a declaration [css-syntax-error]
+
+    <stdin>:166:4:
+      166 │     input {
+          │     ~~~~~
+          ╵     :is(input)
+
+  To start a nested style rule with an identifier, you need to wrap the identifier in ":is(...)" to prevent the rule from being parsed as a declaration.
+
+
+
+[vite:dts] Start generate declaration files...
+computing gzip size...
+[vite:dts] Declaration files built in 14797ms.
+
+dist/assets/map.css                                                             0.09 kB │ gzip:   0.10 kB
+dist/assets/style.css                                                          85.31 kB │ gzip:  63.31 kB
+dist/assets/WidgetSplineGraph.css                                             667.82 kB │ gzip: 503.46 kB
+dist/vite-env.d.js                                                              0.00 kB │ gzip:   0.02 kB
+dist/utilities/types.js                                                         0.00 kB │ gzip:   0.02 kB
+dist/components/organisms/index.js                                              0.08 kB │ gzip:   0.08 kB
+dist/utilities/index.js                                                         0.17 kB │ gzip:   0.15 kB
+dist/components/atoms/SkeletonLoader/SkeletonLoader.js                          0.20 kB │ gzip:   0.17 kB
+dist/components/atoms/Grid/Grid.js                                              0.21 kB │ gzip:   0.17 kB
+dist/components/atoms/AppBar/AppBar.js                                          0.21 kB │ gzip:   0.17 kB
+dist/components/atoms/Tooltip/Tooltip.js                                        0.21 kB │ gzip:   0.17 kB
+dist/components/atoms/Toolbar/Toolbar.js                                        0.21 kB │ gzip:   0.17 kB
+dist/utilities/contants.js                                                      0.22 kB │ gzip:   0.17 kB
+dist/resources/GraphicalResources/index.js                                      0.23 kB │ gzip:   0.13 kB
+dist/components/molecules/index.js                                              0.34 kB │ gzip:   0.15 kB
+dist/components/atoms/Avatar/Avatar.js                                          0.35 kB │ gzip:   0.24 kB
+dist/style.module-b62510ac.js                                                   0.41 kB │ gzip:   0.24 kB
+dist/components/atoms/Divider/Divider.js                                        0.52 kB │ gzip:   0.32 kB
+dist/components/atoms/LegendMarker/LegendMarker.js                              0.59 kB │ gzip:   0.36 kB
+dist/components/atoms/GoogleMaps/ClusterRenderer.js                             0.60 kB │ gzip:   0.33 kB
+dist/components/atoms/Counter/AnimationCounter.js                               0.72 kB │ gzip:   0.44 kB
+dist/_commonjsHelpers-2f131a27.js                                               0.74 kB │ gzip:   0.38 kB
+dist/components/atoms/index.js                                                  0.89 kB │ gzip:   0.32 kB
+dist/useForkRef-e4ec4bbb.js                                                     1.06 kB │ gzip:   0.51 kB
+dist/components/molecules/Widgets/WidgetContainer.js                            1.28 kB │ gzip:   0.61 kB
+dist/components/atoms/Typography/Typography.js                                  1.42 kB │ gzip:   0.58 kB
+dist/main.js                                                                    1.66 kB │ gzip:   0.49 kB
+dist/resources/GraphicalResources/DevicesIcon.js                                2.28 kB │ gzip:   0.68 kB
+dist/components/molecules/Widgets/WidgetStackBarGraph/WidgetStackBarGraph.js    2.39 kB │ gzip:   0.95 kB
+dist/components/molecules/Widgets/WidgetText/WidgetText.js                      3.19 kB │ gzip:   1.16 kB
+dist/styles/theme.js                                                            3.23 kB │ gzip:   1.15 kB
+dist/resources/GraphicalResources/LocationIcon.js                               3.44 kB │ gzip:   1.25 kB
+dist/resources/GraphicalResources/UtilizationIcon.js                            4.24 kB │ gzip:   1.10 kB
+dist/components/organisms/TopBar/TopBar.js                                      4.76 kB │ gzip:   1.58 kB
+dist/resources/GraphicalResources/Highway9LogoSmall.js                          5.16 kB │ gzip:   2.05 kB
+dist/components/molecules/Widgets/WidgetSplineGraph/WidgetSplineGraph.js        6.14 kB │ gzip:   1.84 kB
+dist/createSvgIcon-9036256c.js                                                  6.63 kB │ gzip:   2.72 kB
+dist/components/atoms/Select/Select.js                                          9.11 kB │ gzip:   3.70 kB
+dist/createFluentIcon-5dfeaf33.js                                              14.42 kB │ gzip:   5.25 kB
+dist/map-1c5b8782.js                                                           26.75 kB │ gzip:   8.74 kB
+dist/moment-a48180bc.js                                                        78.90 kB │ gzip:  21.96 kB
+dist/styled-d23b451f.js                                                        81.96 kB │ gzip:  22.88 kB
+dist/components/SearchSelector/index.js                                        92.53 kB │ gzip:  23.74 kB
+dist/components/atoms/GoogleMaps/GoogleMaps.js                                197.77 kB │ gzip:  41.33 kB
+✓ built in 50.39s
+Done in 66.52s.
+yarn run build
+yarn run v1.22.19
+$ vite build
+vite v4.5.2 building for production...
+[plugin:vite-plugin-eslint] LintOnStart is turned on, and it will check for all matching files.
+transforming...
+✓ 14838 modules transformed.
+rendering chunks...
+computing gzip size...
+build/assets/svg/pin.svg                                     0.85 kB │ gzip:   0.44 kB
+build/assets/svg/connected-devices.svg                       0.90 kB │ gzip:   0.41 kB
+build/assets/svg/current.svg                                 0.96 kB │ gzip:   0.47 kB
+build/index.html                                             1.28 kB │ gzip:   0.60 kB
+build/assets/svg/location-map-marker.svg                     2.28 kB │ gzip:   0.97 kB
+build/assets/svg/uim-graph-bar.svg                           2.45 kB │ gzip:   0.82 kB
+build/assets/svg/celltower.svg                               2.73 kB │ gzip:   1.41 kB
+build/assets/svg/green-plain.svg                             3.30 kB │ gzip:   1.25 kB
+build/assets/svg/pointer.svg                                 3.36 kB │ gzip:   1.27 kB
+build/assets/svg/pointer-green.svg                           4.26 kB │ gzip:   1.56 kB
+build/assets/svg/pointer-grey.svg                            4.26 kB │ gzip:   1.56 kB
+build/assets/svg/markerA.svg                                 4.71 kB │ gzip:   1.66 kB
+build/assets/woff2/roboto-vietnamese-400-normal.woff2        5.56 kB
+build/assets/svg/markerB.svg                                 5.70 kB │ gzip:   2.12 kB
+build/assets/woff2/roboto-greek-400-normal.woff2             7.11 kB
+build/assets/svg/Radio-Indoor-Icon.svg                       7.43 kB │ gzip:   1.99 kB
+build/assets/woff2/roboto-cyrillic-400-normal.woff2          9.63 kB
+build/assets/woff2/roboto-latin-ext-400-normal.woff2        11.87 kB
+build/assets/woff2/roboto-cyrillic-ext-400-normal.woff2     15.34 kB
+build/assets/woff2/roboto-latin-400-normal.woff2            15.74 kB
+build/assets/woff/roboto-all-400-normal.woff                65.46 kB
+build/assets/css/EdgesPanel.css                              0.06 kB │ gzip:   0.08 kB
+build/assets/css/index2.css                                  0.16 kB │ gzip:   0.11 kB
+build/assets/css/SubscribersPanel.css                        0.23 kB │ gzip:   0.17 kB
+build/assets/css/SimulatorPanel.css                          0.29 kB │ gzip:   0.21 kB
+build/assets/css/Calibrate.css                               0.64 kB │ gzip:   0.40 kB
+build/assets/css/RadioForm.css                               1.10 kB │ gzip:   0.38 kB
+build/assets/css/RadiosPanelNew.css                          1.16 kB │ gzip:   0.34 kB
+build/assets/css/useInterval.css                             1.30 kB │ gzip:   0.55 kB
+build/assets/css/Dashboard.css                               4.02 kB │ gzip:   2.01 kB
+build/assets/css/EditNotes.css                              17.78 kB │ gzip:   3.15 kB
+build/assets/css/index.css                                  87.32 kB │ gzip:  64.12 kB
+build/assets/css/Dashboard2.css                            667.95 kB │ gzip: 503.51 kB
+build/chunks/SlideUpTransition.cac239b0.js                   0.21 kB │ gzip:   0.20 kB │ map:     0.54 kB
+build/chunks/QoS-service.cfcb98de.js                         0.26 kB │ gzip:   0.22 kB │ map:     0.80 kB
+build/chunks/ArrowForwardIosSharp.16fb608a.js                0.35 kB │ gzip:   0.28 kB │ map:     1.10 kB
+build/chunks/TreeLeaf.b406ec8b.js                            0.53 kB │ gzip:   0.37 kB │ map:     2.20 kB
+build/chunks/NotImplemented.9230f506.js                      0.55 kB │ gzip:   0.40 kB │ map:     1.39 kB
+build/chunks/AccordianSummary.ecf0103d.js                    0.63 kB │ gzip:   0.44 kB │ map:     1.74 kB
+build/chunks/useExport.9db37b3a.js                           0.66 kB │ gzip:   0.45 kB │ map:     3.01 kB
+build/chunks/ModalDialogComponent.d1e95d6a.js                0.75 kB │ gzip:   0.47 kB │ map:     2.37 kB
+build/chunks/TimeDateInput.24796919.js                       0.94 kB │ gzip:   0.51 kB │ map:     3.38 kB
+build/chunks/LineChart.18ca7dbe.js                           1.15 kB │ gzip:   0.70 kB │ map:     3.99 kB
+build/chunks/ContextMenu.14bb1230.js                         1.33 kB │ gzip:   0.77 kB │ map:     5.63 kB
+build/chunks/ModelDialogComponentNew.46b93c85.js             1.54 kB │ gzip:   0.88 kB │ map:     8.23 kB
+build/chunks/useStyles.97c058e6.js                           1.81 kB │ gzip:   0.86 kB │ map:     4.65 kB
+build/chunks/radioHelper.0aea2ebf.js                         2.08 kB │ gzip:   0.84 kB │ map:     8.35 kB
+build/chunks/index.eb207094.js                               2.12 kB │ gzip:   0.72 kB │ map:     6.29 kB
+build/chunks/HealthGauge.579ad147.js                         2.39 kB │ gzip:   1.29 kB │ map:     8.54 kB
+build/chunks/useSupport.dcb15d6f.js                          2.45 kB │ gzip:   1.08 kB │ map:    10.12 kB
+build/chunks/Skeleton.0a6a8913.js                            3.18 kB │ gzip:   1.51 kB │ map:    15.09 kB
+build/chunks/AuditLog.c4623079.js                            3.55 kB │ gzip:   1.51 kB │ map:    13.73 kB
+build/chunks/Collapse.2aedc52c.js                            3.92 kB │ gzip:   1.56 kB │ map:    19.43 kB
+build/chunks/System.ff46a38a.js                              4.51 kB │ gzip:   2.01 kB │ map:    17.88 kB
+build/chunks/HarwareInventoryPanel.9121b5d3.js               4.51 kB │ gzip:   1.61 kB │ map:    17.01 kB
+build/chunks/Logs.61708965.js                                5.14 kB │ gzip:   2.34 kB │ map:    20.44 kB
+build/chunks/AlertDialog.163b71b7.js                         5.51 kB │ gzip:   2.06 kB │ map:    25.51 kB
+build/chunks/ButtonGroup.a44daed0.js                         5.59 kB │ gzip:   1.64 kB │ map:    19.29 kB
+build/chunks/AccordionSummary.3d376137.js                    5.73 kB │ gzip:   1.97 kB │ map:    27.95 kB
+build/chunks/LightTooltip.6898d780.js                        6.54 kB │ gzip:   2.29 kB │ map:    32.74 kB
+build/chunks/web-vitals.867e2ef8.js                          7.13 kB │ gzip:   2.64 kB │ map:    16.73 kB
+build/chunks/TablePagination.f61dbde8.js                     9.23 kB │ gzip:   3.43 kB │ map:    49.29 kB
+build/chunks/DnnPanel.3e7deb0f.js                            9.26 kB │ gzip:   3.51 kB │ map:    36.20 kB
+build/chunks/Checkbox.64525b45.js                           11.80 kB │ gzip:   3.52 kB │ map:    45.84 kB
+build/chunks/setupInfo.144ee11c.js                          16.52 kB │ gzip:   5.25 kB │ map:    51.23 kB
+build/chunks/purify.es.cf254a40.js                          21.73 kB │ gzip:   8.60 kB │ map:    92.09 kB
+build/chunks/ExpandMore.1f34540a.js                         23.01 kB │ gzip:   7.65 kB │ map:   115.72 kB
+build/chunks/Autocomplete.b52e7c9c.js                       23.84 kB │ gzip:   8.36 kB │ map:   114.93 kB
+build/chunks/SimulatorPanel.1a325be5.js                     23.92 kB │ gzip:   7.63 kB │ map:    90.20 kB
+build/chunks/ProfilePanel.9114dccf.js                       32.18 kB │ gzip:   7.62 kB │ map:   118.81 kB
+build/chunks/AdminPanel.d7bad88a.js                         39.68 kB │ gzip:   9.97 kB │ map:   149.16 kB
+build/chunks/AuditLogDetails.41d25b57.js                    42.21 kB │ gzip:  13.97 kB │ map:   317.52 kB
+build/chunks/index.1f598d2c.js                              45.35 kB │ gzip:  12.57 kB │ map:   173.40 kB
+build/chunks/Calibrate.b7175621.js                          72.54 kB │ gzip:  24.13 kB │ map:   260.42 kB
+build/chunks/useInterval.a39f8f13.js                        89.41 kB │ gzip:  27.31 kB │ map:   283.15 kB
+build/chunks/Dashboard.012db304.js                          91.33 kB │ gzip:  22.14 kB │ map:   526.15 kB
+build/chunks/RadioForm.62b43443.js                         134.83 kB │ gzip:  42.32 kB │ map:   569.26 kB
+build/chunks/index.es.67817f0d.js                          149.75 kB │ gzip:  51.03 kB │ map:   632.66 kB
+build/chunks/SubscribersPanel.a942c0bf.js                  157.92 kB │ gzip:  51.61 kB │ map:   564.35 kB
+build/chunks/RadiosPanelNew.78925902.js                    178.85 kB │ gzip:  48.83 kB │ map:   686.38 kB
+build/chunks/EdgesPanel.3476bcab.js                        180.74 kB │ gzip:  42.96 kB │ map:   644.72 kB
+build/chunks/Dashboard.07abc907.js                         250.54 kB │ gzip:  66.60 kB │ map:   666.54 kB
+build/chunks/DataGrid.d21e9f86.js                          266.18 kB │ gzip:  80.86 kB │ map: 1,300.16 kB
+build/chunks/highcharts.ca17a18c.js                        284.36 kB │ gzip: 104.34 kB │ map:   654.69 kB
+build/chunks/EditNotes.facaf60f.js                         477.50 kB │ gzip: 128.93 kB │ map: 1,613.29 kB
+build/chunks/module.334f8631.js                            611.17 kB │ gzip: 182.03 kB │ map: 1,651.73 kB
+build/js/index.dde85173.js                               2,280.79 kB │ gzip: 522.19 kB │ map: 6,441.55 kB
+
+(!) Some chunks are larger than 1000 kBs after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 2m 52s
+Done in 175.21s.
+Compilation done...
+Complete at Fri Feb  9 06:34:07 AM EST 2024
+\n ************************************************** \n
+Compiling at Fri Feb  9 09:30:00 AM EST 2024
+Pulling latest changes from Git...
+From https://github.com/Highway9-Networks/h9-saas
+   322a08414..5f36e2b95  private/mdighe/actions-fix -> origin/private/mdighe/actions-fix
+Already up to date.
+Compiling the orch UI code...
+Deleting build...
+Folder build deleted.
+Folder A is unchanged.
+yarn
+yarn install v1.22.19
+[1/4] Resolving packages...
+success Already up-to-date.
+Done in 2.18s.
+cd ../../common/ui/ui-lib && yarn build
+yarn run v1.22.19
+$ tsc --p ./tsconfig.lib.json && vite build
+vite v4.5.2 building for production...
+transforming...
+✓ 11286 modules transformed.
+Generated an empty chunk: "vite-env.d".
+Generated an empty chunk: "utilities/types".
+warnings when minifying css:
+▲ [WARNING] A nested style rule cannot start with "input" because it looks like the start of a declaration [css-syntax-error]
+
+    <stdin>:166:4:
+      166 │     input {
+          │     ~~~~~
+          ╵     :is(input)
+
+  To start a nested style rule with an identifier, you need to wrap the identifier in ":is(...)" to prevent the rule from being parsed as a declaration.
+
+
+rendering chunks...
+
+[vite:dts] Start generate declaration files...
+computing gzip size...
+[vite:dts] Declaration files built in 15038ms.
+
+dist/assets/map.css                                                             0.09 kB │ gzip:   0.10 kB
+dist/assets/style.css                                                          85.31 kB │ gzip:  63.31 kB
+dist/assets/WidgetSplineGraph.css                                             667.82 kB │ gzip: 503.46 kB
+dist/vite-env.d.js                                                              0.00 kB │ gzip:   0.02 kB
+dist/utilities/types.js                                                         0.00 kB │ gzip:   0.02 kB
+dist/components/organisms/index.js                                              0.08 kB │ gzip:   0.08 kB
+dist/utilities/index.js                                                         0.17 kB │ gzip:   0.15 kB
+dist/components/atoms/SkeletonLoader/SkeletonLoader.js                          0.20 kB │ gzip:   0.17 kB
+dist/components/atoms/Grid/Grid.js                                              0.21 kB │ gzip:   0.17 kB
+dist/components/atoms/AppBar/AppBar.js                                          0.21 kB │ gzip:   0.17 kB
+dist/components/atoms/Tooltip/Tooltip.js                                        0.21 kB │ gzip:   0.17 kB
+dist/components/atoms/Toolbar/Toolbar.js                                        0.21 kB │ gzip:   0.17 kB
+dist/utilities/contants.js                                                      0.22 kB │ gzip:   0.17 kB
+dist/resources/GraphicalResources/index.js                                      0.23 kB │ gzip:   0.13 kB
+dist/components/molecules/index.js                                              0.34 kB │ gzip:   0.15 kB
+dist/components/atoms/Avatar/Avatar.js                                          0.35 kB │ gzip:   0.24 kB
+dist/style.module-b62510ac.js                                                   0.41 kB │ gzip:   0.24 kB
+dist/components/atoms/Divider/Divider.js                                        0.52 kB │ gzip:   0.32 kB
+dist/components/atoms/LegendMarker/LegendMarker.js                              0.59 kB │ gzip:   0.36 kB
+dist/components/atoms/GoogleMaps/ClusterRenderer.js                             0.60 kB │ gzip:   0.33 kB
+dist/components/atoms/Counter/AnimationCounter.js                               0.72 kB │ gzip:   0.44 kB
+dist/_commonjsHelpers-2f131a27.js                                               0.74 kB │ gzip:   0.38 kB
+dist/components/atoms/index.js                                                  0.89 kB │ gzip:   0.32 kB
+dist/useForkRef-e4ec4bbb.js                                                     1.06 kB │ gzip:   0.51 kB
+dist/components/molecules/Widgets/WidgetContainer.js                            1.28 kB │ gzip:   0.61 kB
+dist/components/atoms/Typography/Typography.js                                  1.42 kB │ gzip:   0.58 kB
+dist/main.js                                                                    1.66 kB │ gzip:   0.49 kB
+dist/resources/GraphicalResources/DevicesIcon.js                                2.28 kB │ gzip:   0.68 kB
+dist/components/molecules/Widgets/WidgetStackBarGraph/WidgetStackBarGraph.js    2.39 kB │ gzip:   0.95 kB
+dist/components/molecules/Widgets/WidgetText/WidgetText.js                      3.20 kB │ gzip:   1.17 kB
+dist/styles/theme.js                                                            3.23 kB │ gzip:   1.15 kB
+dist/resources/GraphicalResources/LocationIcon.js                               3.44 kB │ gzip:   1.25 kB
+dist/resources/GraphicalResources/UtilizationIcon.js                            4.24 kB │ gzip:   1.10 kB
+dist/components/organisms/TopBar/TopBar.js                                      4.76 kB │ gzip:   1.58 kB
+dist/resources/GraphicalResources/Highway9LogoSmall.js                          5.16 kB │ gzip:   2.05 kB
+dist/components/molecules/Widgets/WidgetSplineGraph/WidgetSplineGraph.js        6.14 kB │ gzip:   1.84 kB
+dist/createSvgIcon-9036256c.js                                                  6.63 kB │ gzip:   2.72 kB
+dist/components/atoms/Select/Select.js                                          8.72 kB │ gzip:   3.52 kB
+dist/createFluentIcon-5dfeaf33.js                                              14.42 kB │ gzip:   5.25 kB
+dist/map-1c5b8782.js                                                           26.75 kB │ gzip:   8.74 kB
+dist/moment-a48180bc.js                                                        78.90 kB │ gzip:  21.96 kB
+dist/styled-d23b451f.js                                                        81.96 kB │ gzip:  22.88 kB
+dist/components/SearchSelector/index.js                                        92.53 kB │ gzip:  23.74 kB
+dist/components/atoms/GoogleMaps/GoogleMaps.js                                197.77 kB │ gzip:  41.33 kB
+✓ built in 50.20s
+Done in 64.93s.
+yarn run build
+yarn run v1.22.19
+$ vite build
+vite v4.5.2 building for production...
+[plugin:vite-plugin-eslint] LintOnStart is turned on, and it will check for all matching files.
+transforming...
+✓ 14838 modules transformed.
+rendering chunks...
+computing gzip size...
+build/assets/svg/pin.svg                                     0.85 kB │ gzip:   0.44 kB
+build/assets/svg/connected-devices.svg                       0.90 kB │ gzip:   0.41 kB
+build/assets/svg/current.svg                                 0.96 kB │ gzip:   0.47 kB
+build/index.html                                             1.28 kB │ gzip:   0.60 kB
+build/assets/svg/location-map-marker.svg                     2.28 kB │ gzip:   0.97 kB
+build/assets/svg/uim-graph-bar.svg                           2.45 kB │ gzip:   0.82 kB
+build/assets/svg/celltower.svg                               2.73 kB │ gzip:   1.41 kB
+build/assets/svg/green-plain.svg                             3.30 kB │ gzip:   1.25 kB
+build/assets/svg/pointer.svg                                 3.36 kB │ gzip:   1.27 kB
+build/assets/svg/pointer-green.svg                           4.26 kB │ gzip:   1.56 kB
+build/assets/svg/pointer-grey.svg                            4.26 kB │ gzip:   1.56 kB
+build/assets/svg/markerA.svg                                 4.71 kB │ gzip:   1.66 kB
+build/assets/woff2/roboto-vietnamese-400-normal.woff2        5.56 kB
+build/assets/svg/markerB.svg                                 5.70 kB │ gzip:   2.12 kB
+build/assets/woff2/roboto-greek-400-normal.woff2             7.11 kB
+build/assets/svg/Radio-Indoor-Icon.svg                       7.43 kB │ gzip:   1.99 kB
+build/assets/woff2/roboto-cyrillic-400-normal.woff2          9.63 kB
+build/assets/woff2/roboto-latin-ext-400-normal.woff2        11.87 kB
+build/assets/woff2/roboto-cyrillic-ext-400-normal.woff2     15.34 kB
+build/assets/woff2/roboto-latin-400-normal.woff2            15.74 kB
+build/assets/woff/roboto-all-400-normal.woff                65.46 kB
+build/assets/css/EdgesPanel.css                              0.06 kB │ gzip:   0.08 kB
+build/assets/css/index2.css                                  0.16 kB │ gzip:   0.11 kB
+build/assets/css/SubscribersPanel.css                        0.23 kB │ gzip:   0.17 kB
+build/assets/css/SimulatorPanel.css                          0.29 kB │ gzip:   0.21 kB
+build/assets/css/Calibrate.css                               0.64 kB │ gzip:   0.40 kB
+build/assets/css/RadioForm.css                               1.10 kB │ gzip:   0.38 kB
+build/assets/css/RadiosPanelNew.css                          1.16 kB │ gzip:   0.34 kB
+build/assets/css/useInterval.css                             1.30 kB │ gzip:   0.55 kB
+build/assets/css/Dashboard.css                               4.02 kB │ gzip:   2.01 kB
+build/assets/css/EditNotes.css                              17.78 kB │ gzip:   3.15 kB
+build/assets/css/index.css                                  87.32 kB │ gzip:  64.12 kB
+build/assets/css/Dashboard2.css                            667.95 kB │ gzip: 503.51 kB
+build/chunks/SlideUpTransition.e380c7ed.js                   0.21 kB │ gzip:   0.19 kB │ map:     0.54 kB
+build/chunks/QoS-service.512950b3.js                         0.26 kB │ gzip:   0.22 kB │ map:     0.80 kB
+build/chunks/ArrowForwardIosSharp.51ddcbe9.js                0.35 kB │ gzip:   0.28 kB │ map:     1.10 kB
+build/chunks/TreeLeaf.f5c061dc.js                            0.53 kB │ gzip:   0.37 kB │ map:     2.20 kB
+build/chunks/NotImplemented.b4f4bd7a.js                      0.55 kB │ gzip:   0.40 kB │ map:     1.39 kB
+build/chunks/AccordianSummary.17c33fac.js                    0.63 kB │ gzip:   0.44 kB │ map:     1.74 kB
+build/chunks/useExport.a24c72d4.js                           0.66 kB │ gzip:   0.45 kB │ map:     3.01 kB
+build/chunks/ModalDialogComponent.e985057a.js                0.75 kB │ gzip:   0.48 kB │ map:     2.37 kB
+build/chunks/TimeDateInput.0a0932c3.js                       0.94 kB │ gzip:   0.51 kB │ map:     3.38 kB
+build/chunks/LineChart.a26b8fd0.js                           1.15 kB │ gzip:   0.70 kB │ map:     3.99 kB
+build/chunks/ContextMenu.0a77bd02.js                         1.33 kB │ gzip:   0.77 kB │ map:     5.63 kB
+build/chunks/ModelDialogComponentNew.a147ca1f.js             1.54 kB │ gzip:   0.88 kB │ map:     8.23 kB
+build/chunks/useStyles.16abdcd0.js                           1.81 kB │ gzip:   0.86 kB │ map:     4.65 kB
+build/chunks/radioHelper.8c470650.js                         2.08 kB │ gzip:   0.84 kB │ map:     8.35 kB
+build/chunks/index.15a495a1.js                               2.12 kB │ gzip:   0.71 kB │ map:     6.29 kB
+build/chunks/HealthGauge.ef2e733f.js                         2.39 kB │ gzip:   1.29 kB │ map:     8.54 kB
+build/chunks/useSupport.ba5c1570.js                          2.45 kB │ gzip:   1.08 kB │ map:    10.12 kB
+build/chunks/Skeleton.cea15109.js                            3.18 kB │ gzip:   1.51 kB │ map:    15.09 kB
+build/chunks/AuditLog.e3b3b221.js                            3.55 kB │ gzip:   1.51 kB │ map:    13.73 kB
+build/chunks/Collapse.db593b18.js                            3.92 kB │ gzip:   1.56 kB │ map:    19.43 kB
+build/chunks/System.4ea05cba.js                              4.51 kB │ gzip:   2.01 kB │ map:    17.88 kB
+build/chunks/HarwareInventoryPanel.75f794b2.js               4.51 kB │ gzip:   1.61 kB │ map:    17.01 kB
+build/chunks/Logs.32e00c13.js                                5.14 kB │ gzip:   2.35 kB │ map:    20.44 kB
+build/chunks/AlertDialog.2dcfa083.js                         5.51 kB │ gzip:   2.06 kB │ map:    25.51 kB
+build/chunks/ButtonGroup.11fca40b.js                         5.59 kB │ gzip:   1.64 kB │ map:    19.29 kB
+build/chunks/AccordionSummary.d536b44f.js                    5.73 kB │ gzip:   1.97 kB │ map:    27.95 kB
+build/chunks/LightTooltip.329c67c2.js                        6.54 kB │ gzip:   2.29 kB │ map:    32.74 kB
+build/chunks/web-vitals.867e2ef8.js                          7.13 kB │ gzip:   2.64 kB │ map:    16.73 kB
+build/chunks/TablePagination.67940d7c.js                     9.23 kB │ gzip:   3.43 kB │ map:    49.29 kB
+build/chunks/DnnPanel.e873086c.js                            9.26 kB │ gzip:   3.51 kB │ map:    36.20 kB
+build/chunks/Checkbox.285a6721.js                           11.80 kB │ gzip:   3.52 kB │ map:    45.84 kB
+build/chunks/setupInfo.4e918375.js                          16.52 kB │ gzip:   5.25 kB │ map:    51.23 kB
+build/chunks/purify.es.cf254a40.js                          21.73 kB │ gzip:   8.60 kB │ map:    92.09 kB
+build/chunks/ExpandMore.622a3494.js                         23.01 kB │ gzip:   7.65 kB │ map:   115.72 kB
+build/chunks/Autocomplete.84ed044a.js                       23.84 kB │ gzip:   8.36 kB │ map:   114.93 kB
+build/chunks/SimulatorPanel.068b898c.js                     23.92 kB │ gzip:   7.64 kB │ map:    90.20 kB
+build/chunks/ProfilePanel.987ac894.js                       32.18 kB │ gzip:   7.62 kB │ map:   118.81 kB
+build/chunks/AdminPanel.9fe26ece.js                         39.68 kB │ gzip:   9.96 kB │ map:   149.16 kB
+build/chunks/AuditLogDetails.87744d96.js                    42.21 kB │ gzip:  13.97 kB │ map:   317.52 kB
+build/chunks/index.ad7a63e5.js                              45.35 kB │ gzip:  12.57 kB │ map:   173.40 kB
+build/chunks/Calibrate.eab09071.js                          72.54 kB │ gzip:  24.12 kB │ map:   260.42 kB
+build/chunks/useInterval.d3fc181a.js                        89.41 kB │ gzip:  27.31 kB │ map:   283.15 kB
+build/chunks/Dashboard.f20fbe73.js                          91.33 kB │ gzip:  22.14 kB │ map:   526.15 kB
+build/chunks/RadioForm.7e1aa0ed.js                         134.83 kB │ gzip:  42.32 kB │ map:   569.26 kB
+build/chunks/index.es.b0fd20b6.js                          149.75 kB │ gzip:  51.03 kB │ map:   632.66 kB
+build/chunks/SubscribersPanel.f5653dfb.js                  157.92 kB │ gzip:  51.61 kB │ map:   564.35 kB
+build/chunks/RadiosPanelNew.aaa57d60.js                    178.85 kB │ gzip:  48.83 kB │ map:   686.38 kB
+build/chunks/EdgesPanel.3c761151.js                        180.74 kB │ gzip:  42.96 kB │ map:   644.72 kB
+build/chunks/Dashboard.b52f11b2.js                         249.66 kB │ gzip:  66.29 kB │ map:   662.43 kB
+build/chunks/DataGrid.5e34c6c3.js                          266.18 kB │ gzip:  80.85 kB │ map: 1,300.16 kB
+build/chunks/highcharts.274d23e0.js                        284.36 kB │ gzip: 104.34 kB │ map:   654.69 kB
+build/chunks/EditNotes.91a109cf.js                         477.50 kB │ gzip: 128.93 kB │ map: 1,613.29 kB
+build/chunks/module.a054d05a.js                            611.17 kB │ gzip: 182.03 kB │ map: 1,651.73 kB
+build/js/index.036def3c.js                               2,282.28 kB │ gzip: 522.84 kB │ map: 6,450.07 kB
+
+(!) Some chunks are larger than 1000 kBs after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 2m 48s
+Done in 171.45s.
+Compilation done...
+Complete at Fri Feb  9 09:34:02 AM EST 2024
+\n ************************************************** \n
+Compiling at Mon Feb 12 06:30:01 AM EST 2024
+Pulling latest changes from Git...
+From https://github.com/Highway9-Networks/h9-saas
+   6784dea38..dabc0d399  feat/page  -> origin/feat/page
+   a03cabe88..c33a04111  main       -> origin/main
+   1f91a1fd9..a53689262  srudra_13750_CGW_Baremetal_Support -> origin/srudra_13750_CGW_Baremetal_Support
+Already up to date.
+Compiling the orch UI code...
+Deleting build...
+Folder build deleted.
+Folder A is unchanged.
+yarn
+yarn install v1.22.19
+[1/4] Resolving packages...
+success Already up-to-date.
+Done in 1.63s.
+cd ../../common/ui/ui-lib && yarn build
+yarn run v1.22.19
+$ tsc --p ./tsconfig.lib.json && vite build
+vite v4.5.2 building for production...
+transforming...
+✓ 11286 modules transformed.
+Generated an empty chunk: "vite-env.d".
+Generated an empty chunk: "utilities/types".
+rendering chunks...
+warnings when minifying css:
+▲ [WARNING] A nested style rule cannot start with "input" because it looks like the start of a declaration [css-syntax-error]
+
+    <stdin>:166:4:
+      166 │     input {
+          │     ~~~~~
+          ╵     :is(input)
+
+  To start a nested style rule with an identifier, you need to wrap the identifier in ":is(...)" to prevent the rule from being parsed as a declaration.
+
+
+
+[vite:dts] Start generate declaration files...
+computing gzip size...
+[vite:dts] Declaration files built in 11690ms.
+
+dist/assets/map.css                                                             0.15 kB │ gzip:   0.14 kB
+dist/assets/style.css                                                          85.31 kB │ gzip:  63.31 kB
+dist/assets/WidgetSplineGraph.css                                             667.82 kB │ gzip: 503.46 kB
+dist/vite-env.d.js                                                              0.00 kB │ gzip:   0.02 kB
+dist/utilities/types.js                                                         0.00 kB │ gzip:   0.02 kB
+dist/components/organisms/index.js                                              0.08 kB │ gzip:   0.08 kB
+dist/utilities/index.js                                                         0.17 kB │ gzip:   0.15 kB
+dist/components/atoms/SkeletonLoader/SkeletonLoader.js                          0.20 kB │ gzip:   0.17 kB
+dist/components/atoms/Grid/Grid.js                                              0.21 kB │ gzip:   0.17 kB
+dist/components/atoms/AppBar/AppBar.js                                          0.21 kB │ gzip:   0.17 kB
+dist/components/atoms/Tooltip/Tooltip.js                                        0.21 kB │ gzip:   0.17 kB
+dist/components/atoms/Toolbar/Toolbar.js                                        0.21 kB │ gzip:   0.17 kB
+dist/utilities/contants.js                                                      0.22 kB │ gzip:   0.17 kB
+dist/resources/GraphicalResources/index.js                                      0.23 kB │ gzip:   0.13 kB
+dist/components/molecules/index.js                                              0.34 kB │ gzip:   0.15 kB
+dist/components/atoms/Avatar/Avatar.js                                          0.35 kB │ gzip:   0.24 kB
+dist/style.module-b62510ac.js                                                   0.41 kB │ gzip:   0.24 kB
+dist/components/atoms/Divider/Divider.js                                        0.52 kB │ gzip:   0.32 kB
+dist/components/atoms/GoogleMaps/ClusterRenderer.js                             0.60 kB │ gzip:   0.33 kB
+dist/components/atoms/LegendMarker/LegendMarker.js                              0.61 kB │ gzip:   0.36 kB
+dist/components/atoms/Counter/AnimationCounter.js                               0.72 kB │ gzip:   0.44 kB
+dist/_commonjsHelpers-2f131a27.js                                               0.74 kB │ gzip:   0.38 kB
+dist/components/atoms/index.js                                                  0.89 kB │ gzip:   0.32 kB
+dist/useForkRef-e4ec4bbb.js                                                     1.06 kB │ gzip:   0.51 kB
+dist/components/molecules/Widgets/WidgetContainer.js                            1.28 kB │ gzip:   0.61 kB
+dist/components/atoms/Typography/Typography.js                                  1.42 kB │ gzip:   0.58 kB
+dist/main.js                                                                    1.66 kB │ gzip:   0.49 kB
+dist/resources/GraphicalResources/DevicesIcon.js                                2.28 kB │ gzip:   0.68 kB
+dist/components/molecules/Widgets/WidgetStackBarGraph/WidgetStackBarGraph.js    2.39 kB │ gzip:   0.95 kB
+dist/components/molecules/Widgets/WidgetText/WidgetText.js                      3.20 kB │ gzip:   1.17 kB
+dist/styles/theme.js                                                            3.23 kB │ gzip:   1.15 kB
+dist/resources/GraphicalResources/LocationIcon.js                               3.44 kB │ gzip:   1.25 kB
+dist/resources/GraphicalResources/UtilizationIcon.js                            4.24 kB │ gzip:   1.10 kB
+dist/components/organisms/TopBar/TopBar.js                                      4.81 kB │ gzip:   1.59 kB
+dist/resources/GraphicalResources/Highway9LogoSmall.js                          5.16 kB │ gzip:   2.05 kB
+dist/createSvgIcon-9036256c.js                                                  6.63 kB │ gzip:   2.72 kB
+dist/components/molecules/Widgets/WidgetSplineGraph/WidgetSplineGraph.js        6.68 kB │ gzip:   1.84 kB
+dist/components/atoms/Select/Select.js                                          8.79 kB │ gzip:   3.53 kB
+dist/createFluentIcon-5dfeaf33.js                                              14.42 kB │ gzip:   5.25 kB
+dist/map-1c5b8782.js                                                           26.75 kB │ gzip:   8.74 kB
+dist/moment-a48180bc.js                                                        78.90 kB │ gzip:  21.96 kB
+dist/styled-d23b451f.js                                                        81.96 kB │ gzip:  22.88 kB
+dist/components/SearchSelector/index.js                                        92.53 kB │ gzip:  23.74 kB
+dist/components/atoms/GoogleMaps/GoogleMaps.js                                197.77 kB │ gzip:  41.33 kB
+✓ built in 38.09s
+Done in 50.16s.
+yarn run build
+yarn run v1.22.19
+$ vite build
+vite v4.5.2 building for production...
+[plugin:vite-plugin-eslint] LintOnStart is turned on, and it will check for all matching files.
+transforming...
+✓ 14678 modules transformed.
+rendering chunks...
+computing gzip size...
+build/assets/svg/pin.svg                              0.85 kB │ gzip:   0.44 kB
+build/assets/svg/connected-devices.svg                0.90 kB │ gzip:   0.41 kB
+build/assets/svg/current.svg                          0.96 kB │ gzip:   0.47 kB
+build/index.html                                      1.28 kB │ gzip:   0.60 kB
+build/assets/svg/location-map-marker.svg              2.28 kB │ gzip:   0.97 kB
+build/assets/svg/uim-graph-bar.svg                    2.45 kB │ gzip:   0.82 kB
+build/assets/svg/celltower.svg                        2.73 kB │ gzip:   1.41 kB
+build/assets/svg/green-plain.svg                      3.30 kB │ gzip:   1.25 kB
+build/assets/svg/pointer.svg                          3.36 kB │ gzip:   1.27 kB
+build/assets/svg/pointer-green.svg                    4.26 kB │ gzip:   1.56 kB
+build/assets/svg/pointer-grey.svg                     4.26 kB │ gzip:   1.56 kB
+build/assets/svg/markerA.svg                          4.71 kB │ gzip:   1.66 kB
+build/assets/svg/markerB.svg                          5.70 kB │ gzip:   2.12 kB
+build/assets/svg/Radio-Indoor-Icon.svg                7.43 kB │ gzip:   1.99 kB
+build/assets/css/EdgesPanel.css                       0.06 kB │ gzip:   0.08 kB
+build/assets/css/index2.css                           0.16 kB │ gzip:   0.11 kB
+build/assets/css/SubscribersPanel.css                 0.23 kB │ gzip:   0.17 kB
+build/assets/css/SimulatorPanel.css                   0.29 kB │ gzip:   0.21 kB
+build/assets/css/AccordianSummary.css                 0.64 kB │ gzip:   0.40 kB
+build/assets/css/RadioForm.css                        1.10 kB │ gzip:   0.38 kB
+build/assets/css/RadiosPanelNew.css                   1.16 kB │ gzip:   0.34 kB
+build/assets/css/ReactTable.css                       1.30 kB │ gzip:   0.55 kB
+build/assets/css/EditNotes.css                       17.78 kB │ gzip:   3.15 kB
+build/assets/css/index.css                           87.32 kB │ gzip:  64.12 kB
+build/assets/css/Dashboard.css                      668.02 kB │ gzip: 503.54 kB
+build/chunks/SlideUpTransition.6f119d83.js            0.21 kB │ gzip:   0.20 kB │ map:     0.54 kB
+build/chunks/QoS-service.dfa6d745.js                  0.26 kB │ gzip:   0.22 kB │ map:     0.80 kB
+build/chunks/ArrowForwardIosSharp.34df2582.js         0.35 kB │ gzip:   0.28 kB │ map:     1.10 kB
+build/chunks/TreeLeaf.1fc02e31.js                     0.53 kB │ gzip:   0.37 kB │ map:     2.20 kB
+build/chunks/NotImplemented.6e241c87.js               0.55 kB │ gzip:   0.40 kB │ map:     1.39 kB
+build/chunks/useExport.343a7717.js                    0.67 kB │ gzip:   0.45 kB │ map:     3.01 kB
+build/chunks/ModalDialogComponent.413ce265.js         0.75 kB │ gzip:   0.47 kB │ map:     2.37 kB
+build/chunks/ContextMenu.da2e11bf.js                  1.33 kB │ gzip:   0.77 kB │ map:     5.63 kB
+build/chunks/useStyles.f76caae0.js                    1.81 kB │ gzip:   0.86 kB │ map:     4.65 kB
+build/chunks/radioHelper.a9a890d8.js                  2.08 kB │ gzip:   0.84 kB │ map:     8.35 kB
+build/chunks/index.482701a3.js                        2.12 kB │ gzip:   0.72 kB │ map:     6.29 kB
+build/chunks/Skeleton.9d6acfe1.js                     3.18 kB │ gzip:   1.51 kB │ map:    15.09 kB
+build/chunks/useSupport.a013ab36.js                   3.29 kB │ gzip:   1.41 kB │ map:    13.43 kB
+build/chunks/AuditLog.14ea5e2f.js                     3.56 kB │ gzip:   1.51 kB │ map:    13.73 kB
+build/chunks/Collapse.e2238d4c.js                     3.92 kB │ gzip:   1.56 kB │ map:    19.43 kB
+build/chunks/System.8aa74168.js                       4.51 kB │ gzip:   2.02 kB │ map:    17.88 kB
+build/chunks/HarwareInventoryPanel.9e32bcdc.js        4.52 kB │ gzip:   1.61 kB │ map:    17.01 kB
+build/chunks/Logs.00f4a0eb.js                         5.15 kB │ gzip:   2.35 kB │ map:    20.45 kB
+build/chunks/AlertDialog.bd1ffde7.js                  5.51 kB │ gzip:   2.06 kB │ map:    25.51 kB
+build/chunks/ButtonGroup.eec7a915.js                  5.60 kB │ gzip:   1.65 kB │ map:    19.29 kB
+build/chunks/AccordionSummary.68ca8249.js             5.74 kB │ gzip:   1.97 kB │ map:    27.95 kB
+build/chunks/web-vitals.867e2ef8.js                   7.13 kB │ gzip:   2.64 kB │ map:    16.73 kB
+build/chunks/ModelDialogComponentNew.b468c85e.js      7.95 kB │ gzip:   2.86 kB │ map:    40.59 kB
+build/chunks/TablePagination.52a2361f.js              9.23 kB │ gzip:   3.43 kB │ map:    49.29 kB
+build/chunks/DnnPanel.df236b3e.js                     9.26 kB │ gzip:   3.52 kB │ map:    36.20 kB
+build/chunks/Checkbox.fdc5f7d8.js                    11.79 kB │ gzip:   3.52 kB │ map:    45.84 kB
+build/chunks/setupInfo.b58db9b2.js                   16.53 kB │ gzip:   5.25 kB │ map:    51.23 kB
+build/chunks/purify.es.cf254a40.js                   21.73 kB │ gzip:   8.60 kB │ map:    92.09 kB
+build/chunks/ExpandMore.16be3c8d.js                  23.01 kB │ gzip:   7.65 kB │ map:   115.72 kB
+build/chunks/Autocomplete.eb4f3412.js                23.84 kB │ gzip:   8.36 kB │ map:   114.93 kB
+build/chunks/SimulatorPanel.0d25ada6.js              23.86 kB │ gzip:   7.60 kB │ map:    90.20 kB
+build/chunks/ProfilePanel.80bce95e.js                32.18 kB │ gzip:   7.63 kB │ map:   118.81 kB
+build/chunks/AdminPanel.e85374b6.js                  39.61 kB │ gzip:   9.94 kB │ map:   149.01 kB
+build/chunks/AuditLogDetails.ad60005b.js             42.21 kB │ gzip:  13.97 kB │ map:   317.52 kB
+build/chunks/index.2ec20f3e.js                       45.35 kB │ gzip:  12.57 kB │ map:   173.40 kB
+build/chunks/AccordianSummary.5371c6eb.js            73.09 kB │ gzip:  24.48 kB │ map:   262.04 kB
+build/chunks/ReactTable.3568492a.js                  89.41 kB │ gzip:  27.31 kB │ map:   283.15 kB
+build/chunks/RadioForm.1d9ab6c2.js                  134.76 kB │ gzip:  42.28 kB │ map:   569.26 kB
+build/chunks/index.es.04679e12.js                   149.75 kB │ gzip:  51.03 kB │ map:   632.66 kB
+build/chunks/SubscribersPanel.72946018.js           157.93 kB │ gzip:  51.61 kB │ map:   564.44 kB
+build/chunks/RadiosPanelNew.2fc7ea77.js             181.15 kB │ gzip:  49.42 kB │ map:   695.54 kB
+build/chunks/EdgesPanel.9ae4a699.js                 181.55 kB │ gzip:  43.25 kB │ map:   648.43 kB
+build/chunks/Dashboard.4d73c072.js                  249.93 kB │ gzip:  66.37 kB │ map:   664.51 kB
+build/chunks/DataGrid.e8a85b3d.js                   266.19 kB │ gzip:  80.86 kB │ map: 1,300.16 kB
+build/chunks/highcharts.0c088e4c.js                 284.36 kB │ gzip: 104.34 kB │ map:   654.69 kB
+build/chunks/EditNotes.96b6ab0e.js                  477.50 kB │ gzip: 128.93 kB │ map: 1,613.29 kB
+build/chunks/module.af7f7d13.js                     611.11 kB │ gzip: 182.00 kB │ map: 1,651.57 kB
+build/js/index.9527b4b9.js                        2,281.47 kB │ gzip: 522.72 kB │ map: 6,450.85 kB
+
+(!) Some chunks are larger than 1000 kBs after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 2m 10s
+Done in 132.41s.
+Compilation done...
+Complete at Mon Feb 12 06:33:08 AM EST 2024
+\n ************************************************** \n
+Compiling at Mon Feb 12 09:30:00 AM EST 2024
+Pulling latest changes from Git...
+Already up to date.
+Compiling the orch UI code...
+Deleting build...
+Folder build deleted.
+Folder A is unchanged.
+yarn
+yarn install v1.22.19
+[1/4] Resolving packages...
+success Already up-to-date.
+Done in 1.59s.
+cd ../../common/ui/ui-lib && yarn build
+yarn run v1.22.19
+$ tsc --p ./tsconfig.lib.json && vite build
+vite v4.5.2 building for production...
+transforming...
+✓ 11286 modules transformed.
+Generated an empty chunk: "vite-env.d".
+Generated an empty chunk: "utilities/types".
+rendering chunks...
+warnings when minifying css:
+▲ [WARNING] A nested style rule cannot start with "input" because it looks like the start of a declaration [css-syntax-error]
+
+    <stdin>:166:4:
+      166 │     input {
+          │     ~~~~~
+          ╵     :is(input)
+
+  To start a nested style rule with an identifier, you need to wrap the identifier in ":is(...)" to prevent the rule from being parsed as a declaration.
+
+
+
+[vite:dts] Start generate declaration files...
+computing gzip size...
+[vite:dts] Declaration files built in 11083ms.
+
+dist/assets/map.css                                                             0.15 kB │ gzip:   0.14 kB
+dist/assets/style.css                                                          85.31 kB │ gzip:  63.31 kB
+dist/assets/WidgetSplineGraph.css                                             667.82 kB │ gzip: 503.46 kB
+dist/vite-env.d.js                                                              0.00 kB │ gzip:   0.02 kB
+dist/utilities/types.js                                                         0.00 kB │ gzip:   0.02 kB
+dist/components/organisms/index.js                                              0.08 kB │ gzip:   0.08 kB
+dist/utilities/index.js                                                         0.17 kB │ gzip:   0.15 kB
+dist/components/atoms/SkeletonLoader/SkeletonLoader.js                          0.20 kB │ gzip:   0.17 kB
+dist/components/atoms/Grid/Grid.js                                              0.21 kB │ gzip:   0.17 kB
+dist/components/atoms/AppBar/AppBar.js                                          0.21 kB │ gzip:   0.17 kB
+dist/components/atoms/Tooltip/Tooltip.js                                        0.21 kB │ gzip:   0.17 kB
+dist/components/atoms/Toolbar/Toolbar.js                                        0.21 kB │ gzip:   0.17 kB
+dist/utilities/contants.js                                                      0.22 kB │ gzip:   0.17 kB
+dist/resources/GraphicalResources/index.js                                      0.23 kB │ gzip:   0.13 kB
+dist/components/molecules/index.js                                              0.34 kB │ gzip:   0.15 kB
+dist/components/atoms/Avatar/Avatar.js                                          0.35 kB │ gzip:   0.24 kB
+dist/style.module-b62510ac.js                                                   0.41 kB │ gzip:   0.24 kB
+dist/components/atoms/Divider/Divider.js                                        0.52 kB │ gzip:   0.32 kB
+dist/components/atoms/GoogleMaps/ClusterRenderer.js                             0.60 kB │ gzip:   0.33 kB
+dist/components/atoms/LegendMarker/LegendMarker.js                              0.61 kB │ gzip:   0.36 kB
+dist/components/atoms/Counter/AnimationCounter.js                               0.72 kB │ gzip:   0.44 kB
+dist/_commonjsHelpers-2f131a27.js                                               0.74 kB │ gzip:   0.38 kB
+dist/components/atoms/index.js                                                  0.89 kB │ gzip:   0.32 kB
+dist/useForkRef-e4ec4bbb.js                                                     1.06 kB │ gzip:   0.51 kB
+dist/components/molecules/Widgets/WidgetContainer.js                            1.28 kB │ gzip:   0.61 kB
+dist/components/atoms/Typography/Typography.js                                  1.42 kB │ gzip:   0.58 kB
+dist/main.js                                                                    1.66 kB │ gzip:   0.49 kB
+dist/resources/GraphicalResources/DevicesIcon.js                                2.28 kB │ gzip:   0.68 kB
+dist/components/molecules/Widgets/WidgetStackBarGraph/WidgetStackBarGraph.js    2.39 kB │ gzip:   0.95 kB
+dist/components/molecules/Widgets/WidgetText/WidgetText.js                      3.20 kB │ gzip:   1.17 kB
+dist/styles/theme.js                                                            3.23 kB │ gzip:   1.15 kB
+dist/resources/GraphicalResources/LocationIcon.js                               3.44 kB │ gzip:   1.25 kB
+dist/resources/GraphicalResources/UtilizationIcon.js                            4.24 kB │ gzip:   1.10 kB
+dist/components/organisms/TopBar/TopBar.js                                      4.81 kB │ gzip:   1.59 kB
+dist/resources/GraphicalResources/Highway9LogoSmall.js                          5.16 kB │ gzip:   2.05 kB
+dist/createSvgIcon-9036256c.js                                                  6.63 kB │ gzip:   2.72 kB
+dist/components/molecules/Widgets/WidgetSplineGraph/WidgetSplineGraph.js        6.68 kB │ gzip:   1.84 kB
+dist/components/atoms/Select/Select.js                                          8.79 kB │ gzip:   3.53 kB
+dist/createFluentIcon-5dfeaf33.js                                              14.42 kB │ gzip:   5.25 kB
+dist/map-1c5b8782.js                                                           26.75 kB │ gzip:   8.74 kB
+dist/moment-a48180bc.js                                                        78.90 kB │ gzip:  21.96 kB
+dist/styled-d23b451f.js                                                        81.96 kB │ gzip:  22.88 kB
+dist/components/SearchSelector/index.js                                        92.53 kB │ gzip:  23.74 kB
+dist/components/atoms/GoogleMaps/GoogleMaps.js                                197.77 kB │ gzip:  41.33 kB
+✓ built in 37.13s
+Done in 49.11s.
+yarn run build
+yarn run v1.22.19
+$ vite build
+vite v4.5.2 building for production...
+[plugin:vite-plugin-eslint] LintOnStart is turned on, and it will check for all matching files.
+transforming...
+✓ 14678 modules transformed.
+rendering chunks...
+computing gzip size...
+build/assets/svg/pin.svg                              0.85 kB │ gzip:   0.44 kB
+build/assets/svg/connected-devices.svg                0.90 kB │ gzip:   0.41 kB
+build/assets/svg/current.svg                          0.96 kB │ gzip:   0.47 kB
+build/index.html                                      1.28 kB │ gzip:   0.60 kB
+build/assets/svg/location-map-marker.svg              2.28 kB │ gzip:   0.97 kB
+build/assets/svg/uim-graph-bar.svg                    2.45 kB │ gzip:   0.82 kB
+build/assets/svg/celltower.svg                        2.73 kB │ gzip:   1.41 kB
+build/assets/svg/green-plain.svg                      3.30 kB │ gzip:   1.25 kB
+build/assets/svg/pointer.svg                          3.36 kB │ gzip:   1.27 kB
+build/assets/svg/pointer-green.svg                    4.26 kB │ gzip:   1.56 kB
+build/assets/svg/pointer-grey.svg                     4.26 kB │ gzip:   1.56 kB
+build/assets/svg/markerA.svg                          4.71 kB │ gzip:   1.66 kB
+build/assets/svg/markerB.svg                          5.70 kB │ gzip:   2.12 kB
+build/assets/svg/Radio-Indoor-Icon.svg                7.43 kB │ gzip:   1.99 kB
+build/assets/css/EdgesPanel.css                       0.06 kB │ gzip:   0.08 kB
+build/assets/css/index2.css                           0.16 kB │ gzip:   0.11 kB
+build/assets/css/SubscribersPanel.css                 0.23 kB │ gzip:   0.17 kB
+build/assets/css/SimulatorPanel.css                   0.29 kB │ gzip:   0.21 kB
+build/assets/css/AccordianSummary.css                 0.64 kB │ gzip:   0.40 kB
+build/assets/css/RadioForm.css                        1.10 kB │ gzip:   0.38 kB
+build/assets/css/RadiosPanelNew.css                   1.16 kB │ gzip:   0.34 kB
+build/assets/css/ReactTable.css                       1.30 kB │ gzip:   0.55 kB
+build/assets/css/EditNotes.css                       17.78 kB │ gzip:   3.15 kB
+build/assets/css/index.css                           87.32 kB │ gzip:  64.12 kB
+build/assets/css/Dashboard.css                      668.02 kB │ gzip: 503.54 kB
+build/chunks/SlideUpTransition.6f119d83.js            0.21 kB │ gzip:   0.20 kB │ map:     0.54 kB
+build/chunks/QoS-service.dfa6d745.js                  0.26 kB │ gzip:   0.22 kB │ map:     0.80 kB
+build/chunks/ArrowForwardIosSharp.34df2582.js         0.35 kB │ gzip:   0.28 kB │ map:     1.10 kB
+build/chunks/TreeLeaf.1fc02e31.js                     0.53 kB │ gzip:   0.37 kB │ map:     2.20 kB
+build/chunks/NotImplemented.6e241c87.js               0.55 kB │ gzip:   0.40 kB │ map:     1.39 kB
+build/chunks/useExport.343a7717.js                    0.67 kB │ gzip:   0.45 kB │ map:     3.01 kB
+build/chunks/ModalDialogComponent.413ce265.js         0.75 kB │ gzip:   0.47 kB │ map:     2.37 kB
+build/chunks/ContextMenu.da2e11bf.js                  1.33 kB │ gzip:   0.77 kB │ map:     5.63 kB
+build/chunks/useStyles.f76caae0.js                    1.81 kB │ gzip:   0.86 kB │ map:     4.65 kB
+build/chunks/radioHelper.a9a890d8.js                  2.08 kB │ gzip:   0.84 kB │ map:     8.35 kB
+build/chunks/index.482701a3.js                        2.12 kB │ gzip:   0.72 kB │ map:     6.29 kB
+build/chunks/Skeleton.9d6acfe1.js                     3.18 kB │ gzip:   1.51 kB │ map:    15.09 kB
+build/chunks/useSupport.a013ab36.js                   3.29 kB │ gzip:   1.41 kB │ map:    13.43 kB
+build/chunks/AuditLog.14ea5e2f.js                     3.56 kB │ gzip:   1.51 kB │ map:    13.73 kB
+build/chunks/Collapse.e2238d4c.js                     3.92 kB │ gzip:   1.56 kB │ map:    19.43 kB
+build/chunks/System.8aa74168.js                       4.51 kB │ gzip:   2.02 kB │ map:    17.88 kB
+build/chunks/HarwareInventoryPanel.9e32bcdc.js        4.52 kB │ gzip:   1.61 kB │ map:    17.01 kB
+build/chunks/Logs.00f4a0eb.js                         5.15 kB │ gzip:   2.35 kB │ map:    20.45 kB
+build/chunks/AlertDialog.bd1ffde7.js                  5.51 kB │ gzip:   2.06 kB │ map:    25.51 kB
+build/chunks/ButtonGroup.eec7a915.js                  5.60 kB │ gzip:   1.65 kB │ map:    19.29 kB
+build/chunks/AccordionSummary.68ca8249.js             5.74 kB │ gzip:   1.97 kB │ map:    27.95 kB
+build/chunks/web-vitals.867e2ef8.js                   7.13 kB │ gzip:   2.64 kB │ map:    16.73 kB
+build/chunks/ModelDialogComponentNew.b468c85e.js      7.95 kB │ gzip:   2.86 kB │ map:    40.59 kB
+build/chunks/TablePagination.52a2361f.js              9.23 kB │ gzip:   3.43 kB │ map:    49.29 kB
+build/chunks/DnnPanel.df236b3e.js                     9.26 kB │ gzip:   3.52 kB │ map:    36.20 kB
+build/chunks/Checkbox.fdc5f7d8.js                    11.79 kB │ gzip:   3.52 kB │ map:    45.84 kB
+build/chunks/setupInfo.b58db9b2.js                   16.53 kB │ gzip:   5.25 kB │ map:    51.23 kB
+build/chunks/purify.es.cf254a40.js                   21.73 kB │ gzip:   8.60 kB │ map:    92.09 kB
+build/chunks/ExpandMore.16be3c8d.js                  23.01 kB │ gzip:   7.65 kB │ map:   115.72 kB
+build/chunks/Autocomplete.eb4f3412.js                23.84 kB │ gzip:   8.36 kB │ map:   114.93 kB
+build/chunks/SimulatorPanel.0d25ada6.js              23.86 kB │ gzip:   7.60 kB │ map:    90.20 kB
+build/chunks/ProfilePanel.80bce95e.js                32.18 kB │ gzip:   7.63 kB │ map:   118.81 kB
+build/chunks/AdminPanel.e85374b6.js                  39.61 kB │ gzip:   9.94 kB │ map:   149.01 kB
+build/chunks/AuditLogDetails.ad60005b.js             42.21 kB │ gzip:  13.97 kB │ map:   317.52 kB
+build/chunks/index.2ec20f3e.js                       45.35 kB │ gzip:  12.57 kB │ map:   173.40 kB
+build/chunks/AccordianSummary.5371c6eb.js            73.09 kB │ gzip:  24.48 kB │ map:   262.04 kB
+build/chunks/ReactTable.3568492a.js                  89.41 kB │ gzip:  27.31 kB │ map:   283.15 kB
+build/chunks/RadioForm.1d9ab6c2.js                  134.76 kB │ gzip:  42.28 kB │ map:   569.26 kB
+build/chunks/index.es.04679e12.js                   149.75 kB │ gzip:  51.03 kB │ map:   632.66 kB
+build/chunks/SubscribersPanel.72946018.js           157.93 kB │ gzip:  51.61 kB │ map:   564.44 kB
+build/chunks/RadiosPanelNew.2fc7ea77.js             181.15 kB │ gzip:  49.42 kB │ map:   695.54 kB
+build/chunks/EdgesPanel.9ae4a699.js                 181.55 kB │ gzip:  43.25 kB │ map:   648.43 kB
+build/chunks/Dashboard.4d73c072.js                  249.93 kB │ gzip:  66.37 kB │ map:   664.51 kB
+build/chunks/DataGrid.e8a85b3d.js                   266.19 kB │ gzip:  80.86 kB │ map: 1,300.16 kB
+build/chunks/highcharts.0c088e4c.js                 284.36 kB │ gzip: 104.34 kB │ map:   654.69 kB
+build/chunks/EditNotes.96b6ab0e.js                  477.50 kB │ gzip: 128.93 kB │ map: 1,613.29 kB
+build/chunks/module.af7f7d13.js                     611.11 kB │ gzip: 182.00 kB │ map: 1,651.57 kB
+build/js/index.9527b4b9.js                        2,281.47 kB │ gzip: 522.72 kB │ map: 6,450.85 kB
+
+(!) Some chunks are larger than 1000 kBs after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 2m 10s
+Done in 132.31s.
+Compilation done...
+Complete at Mon Feb 12 09:33:06 AM EST 2024
+\n ************************************************** \n
