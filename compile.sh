@@ -15,7 +15,7 @@ pull_and_compile() {
   cd orch/orch-ui
 
   # Check if any file in folder A has been modified, deleted, or created
-  if git diff --quiet HEAD^ -- "orch/orch-ui" >/dev/null 2>&1; then
+  if git diff --quiet HEAD^ -- "orch/orch-ui" "common/ui" >/dev/null 2>&1; then
     echo "Folder A is unchanged."
     # confirm if user wants to continue with the build
     # wait for user input for 5 seconds and continue if no input is received 
