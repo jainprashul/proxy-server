@@ -1,4 +1,7 @@
 import WebSocket from 'ws';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const wsPort = process.env.WS_PORT || 3001;
 
@@ -9,13 +12,13 @@ wss.on('connection', (ws) => {
         console.log(`Received message => ${message}`);
     });
 
-    ws.send('Hello! Message From Server!!');
+    ws.send('Connected to the server');
 });
 
 
-export function websocketSend(message: any) {
+export function websocketSend(message: any, type = 'message') {
     wss.clients.forEach((client) => {
-        const data = JSON.stringify({ message });
+        const data = JSON.stringify({ data: message, type });
         client.send(data);
     });
 }

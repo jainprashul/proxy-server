@@ -1,7 +1,7 @@
 import { exec, spawn } from "child_process"
 import logger from "../services/logger"
 
-export function killChildProcessRecursive(pid : string) {
+export async function killChildProcessRecursive(pid : string) {
     let pids : string[] = []
     try {
       const children = spawn('pgrep', ['-P', pid])

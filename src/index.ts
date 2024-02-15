@@ -3,9 +3,13 @@ import express from 'express';
 import apiRouter from './services/api';
 import cors from 'cors';
 import { wss } from './websocket';
+import './services/cron';
+import logger from './services/logger';
 dotenv.config();
 
 const uiPath = '/home/X/ui-server/ui/build';
+
+logger.log('Server started');
 
 const app = express();
 const port = process.env.PORT || 3000;

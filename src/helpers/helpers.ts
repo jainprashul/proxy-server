@@ -2,25 +2,10 @@ import { ChildProcess, exec, spawn } from "child_process"
 import { Response, Request } from "express"
 import logger from "../services/logger"
 import { killChildProcessRecursive } from "../scripts/kill"
-
-
-
-
-async function compile(res: Response) {
-    const process = spawn('sh', ['/home/X/ui-server/compile.sh'])
-    process.stdout.on('data', (data) => {
-        console.log(`stdout: ${data}`)
-    })
-    process.stderr.on('data', (data) => {
-        console.log(`stderr: ${data}`)
-        if (data.includes('Compilation done')) {
-            res.send('Compilation done')
-        }
-    })
-}
+import { readFile, readSync } from "fs"
 
 const proxyScript = '/home/X/ui-server/src/scripts/run_preview.sh'
-let proxyProcess: ChildProcess
+let proxyProcess: ChildProcess | null;
 
 async function startProxy(url: string) {
     // regex to check if the url is valid 
@@ -51,12 +36,19 @@ async function startProxy(url: string) {
 }
 
 async function stopProxy(res: Response) {
-    // Check if the script is running
-    if (!proxyProcess) {
-        return res.status(400).send('Script is not running')
+    try {
+        // Check if the script is running
+        if (!proxyProcess) {
+            return res.status(400).send('Script is not running')
+        }
+        await killChildProcessRecursive(proxyProcess?.pid?.toString()!)
+        proxyProcess = null;
+        logger.log('Proxy Stopped.')
+        res.status(200).send('Script Stopped.')
+    } catch (error) {
+        logger.error(`Error executing script: ${error}`)
+        return res.status(500).send('Internal Server Error')
     }
-    killChildProcessRecursive(proxyProcess?.pid?.toString()!)
-    res.status(200).send('Script Stopped.')
 }
 
 async function getCurrentProcess() {
@@ -66,14 +58,72 @@ async function getCurrentProcess() {
             processID: proxyProcess?.pid,
             proxy_url: proxyProcess?.spawnargs[2],
             // url: proxyProcess?.pid ? `http://ui-tester.h9.pentagonlab.com:4173` : null
-            url: proxyProcess?.pid ? `http://${ip}:4173` : null
+            url: proxyProcess?.pid ? `http://${ip}:4173` : null,
+            compiling: Boolean(compileProcess),
         }
     ]
+}
+
+const compileScript = '/home/X/ui-server/scripts/compile.sh'
+let compileProcess: ChildProcess | null;
+
+async function compile() {
+    try {
+        compileProcess = spawn('sh', [compileScript])
+        compileProcess?.stdout?.on('data', (data) => {
+            logger.log(`${data}`)
+        })
+        compileProcess?.stderr?.on('data', (data) => {
+            logger.error(`${data}`)
+        })
+        compileProcess?.on('close', (code) => {
+            logger.log(`Compilation done with code ${code}`)
+            compileProcess = null;
+
+            return code
+        })
+    } catch (error) {
+        logger.error(`Error executing script: ${error}`)
+        throw new Error('Error executing script');
+    }
+}
+
+async function getProcesses(res : Response) {
+    const processes = exec('ps ux', (error, stdout, stderr) => {
+        if (error) {
+            logger.error(`Error retrieving processes: ${error}`)
+            return res.status(500).send('Internal Server Error')
+        }
+
+        if(stderr) {
+            logger.error(`Error retrieving processes: ${stderr}`)
+            return res.status(500).send('Internal Server Error')
+        }
+
+        const processes = stdout.split('\n').slice(1).map(line => {
+            const [user, pid, cpu, mem, vsz, rss, tty, stat, start, time, command] = line.split(/\s+/)
+            return { user, pid, cpu, mem, vsz, rss, tty, stat, start, time, command }
+        })
+        return res.send({ processes })
+    })
+}
+
+async function getLogFiles(res: Response) {
+    // read the log file and send file as text r
+    readFile('server.log', 'utf8', (err, data) => {
+        if (err) {
+            logger.error(`Error reading log file: ${err}`)
+            return res.status(500).send('Internal Server Error')
+        }
+        return res.write(data)
+    })
 }
 
 export {
     compile,
     startProxy,
     stopProxy,
-    getCurrentProcess
+    getCurrentProcess,
+    getProcesses,
+    getLogFiles,
 }
