@@ -88,7 +88,7 @@ apiRouter.get('/process', (req, res) => {
   ])
 })
 
-cron.schedule("0 12,17,20 * * *", (x) => {
+cron.schedule("0 */1 * * *", (x) => {
     console.log('Scheduled Compile at', x , Date())
     exec('/home/X/ui-server/compile.sh >> /home/X/ui-server/compile.log 2>&1')
 }, {
