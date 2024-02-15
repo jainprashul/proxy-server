@@ -20,6 +20,13 @@ class Logger {
     const date = new Date(); 
     const timestamp = date.toISOString();
 
+    // check for new line 
+    if (message.includes('\n')) {
+      message = message.replace(/\n/g, ' \n');
+    } else {
+      message = message + '\n';
+    }
+
     const log = `${timestamp} - ${message}`;
     console.log(log);
     // send logs to the file
