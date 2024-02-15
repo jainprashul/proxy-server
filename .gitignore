@@ -3,3 +3,6 @@ node_modules
 # ignore any .log files
 *.log
 
+# ignore build files
+build
+dist

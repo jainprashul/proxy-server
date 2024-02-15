@@ -29,7 +29,6 @@ class Logger {
 
     // send logs to the ui via websocket
     websocketSend(log);
-    
   }
   public error(message: string) {
     const date = new Date();
@@ -40,7 +39,7 @@ class Logger {
     console.error(log);
 
     // send logs to the file
-    fs.appendFile('logs.txt', log, (err) => {
+    fs.appendFile('server.log', log, (err) => {
       if (err) throw err;
     });
     // send logs to the ui via websocket

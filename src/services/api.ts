@@ -1,11 +1,14 @@
 import { Router } from "express"
-import { compile, getCurrentProcess, getLogFiles, getProcesses, startProxy, stopProxy } from "../helpers/helpers"
+import { compile, getCurrentProcess, getLogFiles, getProcesses, isCompiling, startProxy, stopProxy } from "../helpers/helpers"
 
 const apiRouter = Router()
 
 apiRouter.get('/start-compile', async (req, res) => {
   try {
-    await compile();
+    if(isCompiling()){
+      return res.status(400).send('Already compiling')
+    }
+    await compile(true);
     res.status(201).send('Compiling')
   } catch (error) {
     console.error(`Error executing script: ${error}`)

@@ -64,12 +64,15 @@ async function getCurrentProcess() {
     ]
 }
 
-const compileScript = '/home/X/ui-server/scripts/compile.sh'
+const compileScript = '/home/X/ui-server/src/scripts/compile.sh'
 let compileProcess: ChildProcess | null;
 
-async function compile() {
+export const isCompiling = () => Boolean(compileProcess);
+
+async function compile(force = false) {
+    const args = force ? [compileScript, '-f'] : [compileScript]
     try {
-        compileProcess = spawn('sh', [compileScript])
+        compileProcess = spawn('sh', args)
         compileProcess?.stdout?.on('data', (data) => {
             logger.log(`${data}`)
         })

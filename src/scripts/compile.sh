@@ -4,6 +4,9 @@
 REPO_PATH="/home/X/h9-saas"
 HOME=/root
 
+# -f: force the compilation to run
+FORCE=$1
+
 pull_and_compile() {
   current_date=$(date)
   echo "Compiling at $current_date"
@@ -17,6 +20,14 @@ pull_and_compile() {
   # Check if any file in folder A has been modified, deleted, or created
   if git diff --quiet HEAD^ -- "orch/orch-ui" "common/ui" >/dev/null 2>&1; then
     echo "Folder A is unchanged."
+
+    # IF -F flag is passed, force the build process
+    if [ "$FORCE" = "-f" ] || [ "$FORCE" = "-F" ]; then
+      echo "Force build flag detected. Running the build process..."
+      compile
+      exit 0
+    fi
+
     # confirm if user wants to continue with the build
     # wait for user input for 5 seconds and continue if no input is received 
     read -t 5 -p "Do you want to continue with the build? (y/n) " || true
