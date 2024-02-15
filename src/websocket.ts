@@ -12,10 +12,6 @@ wss.on('connection', (ws) => {
     ws.send('Hello! Message From Server!!');
 });
 
-wss.on('listening', () => {
-    console.log(`Websocket server is running on port ${wsPort}`);
-});
-
 
 export function websocketSend(message: any) {
     wss.clients.forEach((client) => {

@@ -1,12 +1,15 @@
 import { Router } from "express"
 import { exec, spawn } from 'child_process'
 import cron from "node-cron"
+import { getCurrentProcess, startProxy, stopProxy } from "../helpers/helpers"
+import { get } from "http"
 
 const apiRouter = Router()
 
 let initPort = 4173
 
-let scriptProcess;
+let scriptProcess : any;
+
 
 apiRouter.get('/start-compile' , (req , res)=>{
   const process = spawn('sh', ['/home/X/ui-server/compile.sh'])
@@ -22,46 +25,24 @@ apiRouter.get('/start-compile' , (req , res)=>{
 
 })
 
-apiRouter.post('/start-proxy', (req, res) => {
+apiRouter.post('/start-proxy', async (req, res) => {
   const payload = req.body
   const url = payload.url
-  console.log("Proxy URL : ", url)
-
-  scriptProcess = exec(`/home/X/ui-server/run_preview.sh ${url}`, (error, stdout, stderr) => {
-    scriptProcess = null
-    if (error) {
-      console.error(`Error executing script: ${error}`)
-      return res.status(500).send('Internal Server Error')
+  try {
+    if (!url) {
+      return res.status(400).send('Invalid URL')
     }
-    console.log(`Script output: ${stdout}`)
-    return res.send({ output: stdout })
-  })
+    const data = await startProxy(url)
+    return res.send(data)
 
-  res.send({
-    processID: scriptProcess.pid,
-    proxy_url: scriptProcess.spawnargs[2].split(' ')[1],
-    url: `http://ui-tester.h9.pentagonlab.com:${initPort}`
-  })
+  } catch (error) {
+    console.error(`Error executing script: ${error}`)
+    return res.status(500).send('Internal Server Error')
+  }
 })
 
-apiRouter.get('/stop-proxy', (req, res) => {
-  // Check if the script is running
-  if (!scriptProcess) {
-    return res.status(400).send('Script is not running')
-  }
-
-  // Terminate the script process
-  scriptProcess.kill()
-  exec('pkill -f orch-ui', (error , stdout, stderr) => {
-    if(error) {
-      console.error(`Error stopping script: ${error}`)
-      return res.status(500).send('Internal Server Error')
-    }
-    console.log(`Script Stopped.`)
-  })
-  
-
-  return res.status(201).send('Script stopped');
+apiRouter.get('/stop-proxy', async (req, res) => {
+    return await stopProxy(res)
 })
 
 apiRouter.get('/processes', (req, res) => {
@@ -78,19 +59,15 @@ apiRouter.get('/processes', (req, res) => {
     return res.send({ processes })
   })
 })
-apiRouter.get('/process', (req, res) => {
-  res.send([
-    {
-      processID: scriptProcess?.pid,
-      proxy_url: scriptProcess?.spawnargs[2].split(' ')[1],
-      url: scriptProcess?.pid ?  `http://ui-tester.h9.pentagonlab.com:${initPort}` : null
-    }
-  ])
+apiRouter.get('/process', async (req, res) => {
+
+  const process = await getCurrentProcess();
+  return res.send(process)
 })
 
 cron.schedule("0 */1 * * *", (x) => {
     console.log('Scheduled Compile at', x , Date())
-    exec('/home/X/ui-server/compile.sh >> /home/X/ui-server/compile.log 2>&1')
+    exec('/home/X/ui-server/src/scripts/compile.sh >> /home/X/logs/compile.log 2>&1')
 }, {
   timezone : "Asia/Kolkata"
 });

@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 import express from 'express';
 import apiRouter from './services/api';
 import cors from 'cors';
+import { wss } from './websocket';
 dotenv.config();
 
 const uiPath = '/home/X/ui-server/ui/build';
@@ -23,6 +24,10 @@ app.get('*', (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 }); 
+
+wss.on('listening', () => {
+  console.log(`Websocket server is running on port ${wss.options.port}`);
+});
 
 
 

@@ -20,10 +20,10 @@ class Logger {
     const date = new Date(); 
     const timestamp = date.toISOString();
 
-    const log = `${timestamp} - log - ${message} \n`;
+    const log = `${timestamp} - ${message}`;
     console.log(log);
     // send logs to the file
-    fs.appendFile('logs.txt', log, (err) => {
+    fs.appendFile('server.log', log, (err) => {
       if (err) throw err;
     });
 
