@@ -22,7 +22,7 @@ class Logger {
 
     // check for new line 
     if (message.includes('\n')) {
-      message = message.replace(/\n/g, ' \n');
+      message = message;
     } else {
       message = message + '\n';
     }

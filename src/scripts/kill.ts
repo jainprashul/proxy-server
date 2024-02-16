@@ -1,5 +1,4 @@
 import { exec, spawn } from "child_process"
-import logger from "../services/logger"
 
 export async function killChildProcessRecursive(pid : string) {
     let pids : string[] = []
@@ -11,11 +10,11 @@ export async function killChildProcessRecursive(pid : string) {
         childPids.forEach((childPid : any) => killChildProcessRecursive(childPid))
       })
       children.on('close', () => {
-        logger.log(`Killing child process: ${pid}`)
+        console.log(`Killing child process: ${pid}`)
         exec(`kill -9 ${pid}`)
       })
     } catch (error) {
-      logger.error(`Error killing child process: ${error}`)
+      console.error(`Error killing child process: ${error}`)
     }
   }
 
