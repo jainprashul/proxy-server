@@ -19,7 +19,7 @@ pull_and_compile() {
 
   # Check if any file in folder A has been modified, deleted, or created
   if git diff --quiet HEAD^ -- "orch/orch-ui" "common/ui" >/dev/null 2>&1; then
-    echo "Folder A is unchanged."
+    echo "UI folder is unchanged."
 
     # IF -F flag is passed, force the build process
     if [ "$FORCE" = "-f" ] || [ "$FORCE" = "-F" ]; then
@@ -39,7 +39,7 @@ pull_and_compile() {
     fi
 
   else
-    echo "Folder A has files that have been modified, deleted, or created."
+    echo "UI folder has files that have been modified, deleted, or created."
     compile
   fi
 }

@@ -3,6 +3,7 @@ import { Response, Request } from "express"
 import logger from "../services/logger"
 import { killChildProcessRecursive } from "../scripts/kill"
 import { readFile, readSync } from "fs"
+import { getLocalIp } from "./ip"
 
 const proxyScript = '/home/X/ui-server/src/scripts/run_preview.sh'
 let proxyProcess: ChildProcess | null;
@@ -51,8 +52,9 @@ async function stopProxy(res: Response) {
     }
 }
 
+
 async function getCurrentProcess() {
-    let ip = '192.168.200.112'
+    let ip = getLocalIp();
     return [
         {
             processID: proxyProcess?.pid,
