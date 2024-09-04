@@ -9,6 +9,7 @@ const proxyScript = '/home/X/ui-server/src/scripts/run_preview.sh'
 let proxyProcess: ChildProcess | null;
 
 async function startProxy(url: string) {
+    let ip = getLocalIp();
     // regex to check if the url is valid 
     let regex = new RegExp('^(http|https)://', 'i')
     try {
@@ -28,7 +29,7 @@ async function startProxy(url: string) {
         return ({
             processID: proxyProcess.pid,
             proxy_url: proxyProcess.spawnargs?.[2]?.split(' ')?.[1],
-            url: `http://ui-tester.h9.pentagonlab.com:4173`
+            url: `http://${ip}:4173`
         })
     } catch (error) {
         logger.error(`Error executing script: ${error}`)
@@ -93,6 +94,30 @@ async function compile(force = false) {
     }
 }
 
+let switchScript = '/home/X/ui-server/src/scripts/switch_branch.sh'
+let switchProcess: ChildProcess | null;
+
+async function switchBranch(branch: string) {
+    const args = [switchScript, branch]
+    try {
+        switchProcess = spawn('sh', args)
+        switchProcess?.stdout?.on('data', (data) => {
+            logger.log(`${data}`)
+        })
+        switchProcess?.stderr?.on('data', (data) => {
+            logger.error(`${data}`)
+        })
+        switchProcess?.on('close', (code) => {
+            logger.log(`Switch branch done with code ${code}`)
+            switchProcess = null;
+            return code
+        })
+    } catch (error) {
+        logger.error(`Error executing script: ${error}`)
+        throw new Error('Error executing script');
+    }
+}
+
 async function getProcesses(res : Response) {
     const processes = exec('ps ux', (error, stdout, stderr) => {
         if (error) {
@@ -131,4 +156,5 @@ export {
     getCurrentProcess,
     getProcesses,
     getLogFiles,
+    switchBranch
 }

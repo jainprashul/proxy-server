@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { compile, getCurrentProcess, getLogFiles, getProcesses, isCompiling, startProxy, stopProxy } from "../helpers/helpers"
+import { compile, getCurrentProcess, getLogFiles, getProcesses, isCompiling, startProxy, stopProxy, switchBranch } from "../helpers/helpers"
 
 const apiRouter = Router()
 
@@ -48,5 +48,19 @@ apiRouter.get('/logs', (req, res) => {
     getLogFiles(res)
 })
 
+apiRouter.post('/switch-branch', async (req, res) => {
+  const branch = req.body.branch;
+  try {
+    if(!branch) {
+      return res.status(400).send('Invalid branch name')
+    }
+    const data = await switchBranch(branch)
+    return res.send(data)
+  } catch (error) {
+    console.error(`Error executing script: ${error}`)
+    return res.status(500).send('Internal Server Error')
+  }
+}
+)
 
 export default apiRouter
