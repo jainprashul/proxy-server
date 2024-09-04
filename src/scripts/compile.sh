@@ -12,6 +12,9 @@ pull_and_compile() {
   echo "Compiling at $current_date"
   echo "Pulling latest changes from Git..."
   cd "$REPO_PATH"
+  # get the branch name
+  branch=$(git rev-parse --abbrev-ref HEAD)
+  echo "Currently on branch `$branch`"
   git pull
 
   echo "Check the diff for orch UI code..."

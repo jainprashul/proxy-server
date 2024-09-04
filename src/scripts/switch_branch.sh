@@ -15,7 +15,7 @@ switch_branch() {
   git pull
 
   echo "Switching to branch $BRANCH..."
-  git checkout $BRANCH
+  git checkout -f $BRANCH
 
 }
 

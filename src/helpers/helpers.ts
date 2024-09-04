@@ -118,6 +118,28 @@ async function switchBranch(branch: string) {
     }
 }
 
+let terminalProcess: ChildProcess | null;
+
+async function runCommand(command: string) {
+    try {
+        terminalProcess = exec(command)
+        terminalProcess?.stdout?.on('data', (data) => {
+            logger.log(`${data}`)
+        })
+        terminalProcess?.stderr?.on('data', (data) => {
+            logger.error(`${data}`)
+        })
+        terminalProcess?.on('close', (code) => {
+            logger.log(`Command done with code ${code}`)
+            terminalProcess = null;
+            return code
+        })
+    } catch (error) {
+        logger.error(`Error executing command: ${error}`)
+        throw new Error('Error executing command');
+    }
+}
+
 async function getProcesses(res : Response) {
     const processes = exec('ps ux', (error, stdout, stderr) => {
         if (error) {
@@ -156,5 +178,6 @@ export {
     getCurrentProcess,
     getProcesses,
     getLogFiles,
-    switchBranch
+    switchBranch,
+    runCommand
 }
