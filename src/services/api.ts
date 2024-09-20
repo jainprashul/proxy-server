@@ -32,7 +32,7 @@ apiRouter.post('/start-proxy', async (req, res) => {
 })
 
 apiRouter.get('/stop-proxy', async (req, res) => {
-  return await stopProxy(res)
+  return await stopProxy(req , res)
 })
 
 apiRouter.get('/process', async (req, res) => {

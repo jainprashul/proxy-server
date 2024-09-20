@@ -4,12 +4,21 @@ import logger from "../services/logger"
 import { killChildProcessRecursive } from "../scripts/kill"
 import { readFile, readSync } from "fs"
 import { getLocalIp } from "./ip"
+import { NodeProcess } from "./type"
 
 const proxyScript = '/home/X/ui-server/src/scripts/run_preview.sh'
-let proxyProcess: ChildProcess | null;
+
+let processes : Record<string, NodeProcess> = {}
 
 async function startProxy(url: string) {
     let ip = getLocalIp();
+    let currentProcess : NodeProcess = {
+        process: null,
+        proxy_url: null,
+        url: null,
+        processID: '',
+        compiling: Boolean(compileProcess),
+    }
     // regex to check if the url is valid 
     let regex = new RegExp('^(http|https)://', 'i')
     try {
@@ -17,35 +26,56 @@ async function startProxy(url: string) {
 
         if (!regex.test(url)) throw new Error('Invalid URL')
 
-        proxyProcess = spawn('sh', [proxyScript, url])
+        currentProcess.process = spawn('sh', [proxyScript, url])
 
-        proxyProcess.stdout?.on('data', (data) => {
+        currentProcess.process.stdout?.on('data', (data) => {
             logger.log(data)
+
+            // check in the logs if the proxy server logs url and port
+            if (data.includes('➜  Network: http://')) {
+                currentProcess.url = data.toString().split('➜  Network: ')[1].trim()
+            }
         })
-        proxyProcess.stderr?.on('data', (data) => {
+        currentProcess.process.stderr?.on('data', (data) => {
             logger.error(data);
         })
 
-        return ({
-            processID: proxyProcess.pid,
-            proxy_url: proxyProcess.spawnargs?.[2]?.split(' ')?.[1],
-            url: `http://${ip}:4173`
-        })
+        // update the proxied url
+        currentProcess.proxy_url = url
+        currentProcess.processID = currentProcess.process?.pid?.toString()!
+
+
+        // update the global process
+        const pid = currentProcess.process?.pid?.toString();
+        if (!pid) {
+            throw new Error('Failed to start proxy process');
+        }
+        processes[pid] = currentProcess;
+
+        logger.log('Proxy Started.')
+
+        return currentProcess;
+        
     } catch (error) {
         logger.error(`Error executing script: ${error}`)
         throw new Error('Internal Server Error')
     }
 }
 
-async function stopProxy(res: Response) {
+async function stopProxy(req: Request, res: Response) {
     try {
+        const pid = req.query.pid as string
+        if (!pid) {
+            return res.status(400).send('Invalid Process ID')
+        }
+        // get the process id of the proxy server
         // Check if the script is running
-        if (!proxyProcess) {
+        if (processes[pid].process === null) {
             return res.status(400).send('Script is not running')
         }
-        await killChildProcessRecursive(proxyProcess?.pid?.toString()!)
-        proxyProcess = null;
-        logger.log('Proxy Stopped.')
+        await killChildProcessRecursive(pid);
+        logger.log(`Proxy Stopped with PID: ${pid} & Proxy URL: ${processes[pid].proxy_url}`)
+        delete processes[pid];
         res.status(200).send('Script Stopped.')
     } catch (error) {
         logger.error(`Error executing script: ${error}`)
@@ -56,15 +86,15 @@ async function stopProxy(res: Response) {
 
 async function getCurrentProcess() {
     let ip = getLocalIp();
-    return [
-        {
-            processID: proxyProcess?.pid,
-            proxy_url: proxyProcess?.spawnargs[2],
-            // url: proxyProcess?.pid ? `http://ui-tester.h9.pentagonlab.com:4173` : null
-            url: proxyProcess?.pid ? `http://${ip}:4173` : null,
+
+    return Object.values(processes).map((process) => {
+        return {
+            processID: process.processID,
+            proxy_url: process.proxy_url,
+            url: process.url,
             compiling: Boolean(compileProcess),
         }
-    ]
+    });
 }
 
 const compileScript = '/home/X/ui-server/src/scripts/compile.sh'
